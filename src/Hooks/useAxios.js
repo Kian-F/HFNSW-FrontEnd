@@ -4,7 +4,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
-const useAxios = (params) => {
+const useAxios = () => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -24,11 +24,18 @@ const useAxios = (params) => {
     }
   };
 
-  useEffect(() => {
-    fetchData(params);
-  }, []);
+  // useEffect(() => {
+  //   fetchData(params);
+  // }, []);
 
-  return { response, error, loading, fetchData };
+  return {
+    callbacks: {
+      fetchData: params => fetchData(params),
+    },
+    response,
+    error,
+    loading,
+  };
 };
 
 export default useAxios;

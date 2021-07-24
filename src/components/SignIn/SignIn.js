@@ -16,44 +16,31 @@ let history = useHistory();
   const options = {
     method: 'POST',
     url: `http://localhost:3000/user/token`,
-    headers: {accept: '*/*'},
-    data: {auth:{
-      email: email,
-      password: password,
-    }}, 
+    headers: {
+      accept: '*/*'
+    },
+    data: {
+      auth:{
+        email: email,
+        password: password,
+      }
+    }, 
   }
+
+  const {
+    callbacks: { fetchData },
+    error,
+    loading,
+  } = useAxios()
+
   function handleSubmit(event) {
     event.preventDefault();
-  }
-  const { error,loading, fetchData} = useAxios(options)
 
-//   `function updateData() {
-//     executePost()
-//   }`
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   axios
-  //     .post(
-  //       url, {
-  //       auth: {
-  //         email,
-  //         password,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       localStorage.setItem("jwt", res.data.jwt);
-  //       console.log(res.data);
-  //       console.log("user logged in");
-  //       history.push("/");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       //setState({ errorMessage: "Invalid email or password" });
-  //     });
-  // };
-  // function PostData() {
-  //   executePost()
-  // }
+    fetchData(options)
+
+    return false
+  }
+
   return (
     <div>
       <h1>
@@ -77,7 +64,7 @@ let history = useHistory();
           name="password"
           required
         />
-        <button type="submit"  onSubmit={handleSubmit}>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </form>
     </div>
   )
