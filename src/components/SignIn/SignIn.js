@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-//import axios from 'axios'
+
 import useAxios from '../../Hooks/useAxios.js'
-// import useAxios from 'axios-hooks';
+
 import { useHistory, withRouter } from "react-router-dom";
 
 const url = "http://localhost:3000/user/token"
