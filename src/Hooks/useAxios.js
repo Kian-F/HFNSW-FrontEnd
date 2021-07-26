@@ -1,10 +1,15 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+import { useHistory } from "react-router-dom";
+
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
+
 const useAxios = (params) => {
+  const history = useHistory()
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -13,8 +18,6 @@ const useAxios = (params) => {
     setLoading(true);
     try {
       const res = await axios.request(params);
-      console.log(params);
-			console.log(res);
       setResponse(res.data);
       setError(null);
     } catch (err) {
@@ -24,11 +27,14 @@ const useAxios = (params) => {
     }
   };
 
-  useEffect(() => {
-    fetchData(params);
-  }, []);
-
-  return { response, error, loading, fetchData };
+  return {
+    callbacks: {
+      fetchData: params => fetchData(params),
+    },
+    response,
+    error,
+    loading,
+  }
 };
 
 export default useAxios;
