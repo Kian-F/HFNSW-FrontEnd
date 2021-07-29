@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 import useAxios from '../../Hooks/useAxios.js'
 
 import { useHistory, withRouter } from "react-router-dom";
-
-const url = "http://localhost:3000/user/token"
-
+import LoginButton from '../LoginButton/LoginButton.js';
 const SignIn = () => {
 
 let history = useHistory();
@@ -66,6 +64,7 @@ let history = useHistory();
           name="password"
           required
         />
+        <LoginButton/>
         <button onClick={handleSubmit}>Submit</button>
       </form>
     </div>
