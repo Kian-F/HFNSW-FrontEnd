@@ -8,18 +8,18 @@ const LogoutButton = () => {
 
   return (
 
-    <button
-      className="btn btn-danger btn-block"
+    <div
       onClick={() =>
+
         logout({
           returnTo: window.location.origin,
         })
       }
     >
 
-      Log Out
+      Sign Out
       
-    </button>
+    </div>
   );
 };
 

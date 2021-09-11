@@ -1,12 +1,11 @@
 import React from "react";
-import AuthenticationButton from "./authentication-button";
+
+import AuthenticationButton from "../../auth/AuthenticationButton";
 
 const AuthNav = () => (
 
   <div className="navbar-nav ml-auto">
-
     <AuthenticationButton />
-    
   </div>
 );
 

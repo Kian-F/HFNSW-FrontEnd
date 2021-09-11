@@ -5,6 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Home from './components/Home/Home';
 import SignIn from './components/SignIn/SignIn';
 import SignInSide from './components/SignIn/SignInSide';
+import Profile from './Views/Profile';
 
 // import { NavBar, Footer, Loading } from "./components";
 // import { Home, Profile, ExternalApi } from "./views";
@@ -26,6 +27,7 @@ const App = () => {
           <Route exact path="/" component={Home}/>
           <Route exact path="/SignIn" component={SignIn}/>
           <Route exact path="/SignInSide" component={SignInSide}/>
+          <Route exact path="/Profile" component={Profile}/>
         </Switch>
       </div>
       {/* <Footer /> */}
