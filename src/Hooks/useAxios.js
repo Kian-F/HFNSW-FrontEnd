@@ -1,36 +1,38 @@
+import { useState } from 'react'
 
-import { useState } from 'react';
+import axios from 'axios'
 
-import axios from 'axios';
-
-axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 const useAxios = () => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState(null) || {}
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const fetchData = async (params) => {
-    setLoading(true);
+    setLoading(true)
     try {
-      const res = await axios.request(params);
-      setResponse(res.data);
-      setError(null);
+      const res = await axios.request(params)
+      localStorage.setItem('jwt', res.data.jwt)
+      setResponse(res.data || {})
+      setError(null)
+      if (res.status === 'created') {
+      }
     } catch (err) {
-      setError(err);
+      setError(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return {
     callbacks: {
-      fetchData: params => fetchData(params),
+      fetchData: (params) => fetchData(params)
     },
     response,
     error,
-    loading,
+    loading
   }
-};
+}
 
-export default useAxios;
+export default useAxios

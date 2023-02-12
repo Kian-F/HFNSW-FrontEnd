@@ -1,38 +1,51 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useEffect, useState } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-import Home from './components/Home/Home';
-import SignIn from './components/SignIn/SignIn';
-import SignInSide from './components/SignIn/SignInSide';
-import Profile from './Views/Profile';
+import { createTheme, ThemeProvider, styled, useTheme } from '@mui/material/styles'
+import { Box, CssBaseline, Grid, StyledEngineProvider } from '@mui/material'
 
-// import { NavBar, Footer, Loading } from "./components";
-// import { Home, Profile, ExternalApi } from "./views";
+import { useAuth0 } from '@auth0/auth0-react'
+import { setAccessToken } from './Functions/accessToken'
 
-// import "./app.css";
+import Account from './components/account'
+import RightSideBar from './components/Dashboard/responsiveDrawer.jsx'
+import Users from './components/Users/users'
+import UserDetails from './components/Users/userDetails'
+import Profile from './Views/Profile'
+import SignInSide from './components/SignIn/SignInSide'
+import MainContent from './components/MainContent/MainContent'
 
 const App = () => {
-  const { isLoading } = useAuth0();
+  const { getAccessTokenSilently, isAuthenticated } = useAuth0()
+  useEffect(() => {
+    if (isAuthenticated) {
+      setAccessToken(getAccessTokenSilently)
+    }
+  }, [getAccessTokenSilently, isAuthenticated])
 
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+  const theme = useTheme()
 
   return (
-    <div id="app" className="d-flex flex-column h-100">
+    <>
       {/* <NavBar /> */}
-      <div className="container flex-grow-1">
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/SignIn" component={SignIn}/>
-          <Route exact path="/SignInSide" component={SignInSide}/>
-          <Route exact path="/Profile" component={Profile}/>
-        </Switch>
-      </div>
-      {/* <Footer /> */}
-    </div>
-  );
-};
+      {/* <StyledEngineProvider injectFirst> */}
+      <ThemeProvider theme={theme}>
+        {isAuthenticated && <RightSideBar />}
+        <MainContent>
+          <Switch>
+            {/* <Route exact path="/" component={Home} /> */}
+            <Route exact path="/signInSide" component={SignInSide} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/account" component={Account} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/users/:id/userDetails" component={UserDetails} />
+          </Switch>
+        </MainContent>
+      </ThemeProvider>
+      {/* </StyledEngineProvider> */}
+    </>
+    // {/* <Footer /> */}
+  )
+}
 
-export default App;
+export default App

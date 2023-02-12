@@ -1,17 +1,19 @@
-import React from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom';
-import Home from './components/Home/Home';
-import SignIn from './components/SignIn/SignIn';
-import SignInSide from './components/SignIn/SignInSide';
+import React from 'react'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Home from './components/Home/Home'
+import SignInSide from './components/SignIn/SignInSide'
+import Users from './components/Users/users'
+import Profile from './Views/Profile'
+import Account from './components/account'
 
-const Routes = (
+const Routes = () => (
   <Router basename="">
-    <div>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/SignIn" component={SignIn}/>
-      <Route exact path="/SignInSide" component={SignInSide}/>
-    </div>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/signInSide" component={SignInSide} />
+    <Route exact path="/profile" component={Profile} />
+    <Route exact path="/account" component={Account} />
+    <Route exact path="/users" component={Users} />
   </Router>
-);
+)
 
-export default Routes;
+export default Routes
