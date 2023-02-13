@@ -1,13 +1,10 @@
-import React, { useRef, useState } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import { useMutation, useQuery } from 'react-query'
-import { useForm } from 'react-hook-form'
-
-import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, Input, TextField } from '@mui/material'
 
 import * as api from '../../ReactQuery/usersApi'
 import MainContent from '../MainContent/Columns/Main/Mian'
-import UserForm from '../Forms/userForm'
+import UserForm from '../Forms/UserForm'
 
 const UserDetails = () => {
   const { id: userId } = useParams()

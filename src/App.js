@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { createTheme, ThemeProvider, styled, useTheme } from '@mui/material/styles'
-import { Box, CssBaseline, Grid, StyledEngineProvider } from '@mui/material'
+import { ThemeProvider, useTheme } from '@mui/material/styles'
 
 import { useAuth0 } from '@auth0/auth0-react'
 import { setAccessToken } from './Functions/accessToken'
 
 import Account from './components/account'
-import RightSideBar from './components/Dashboard/responsiveDrawer.jsx'
-import Users from './components/Users/users'
-import UserDetails from './components/Users/userDetails'
+import RightSideBar from './components/Dashboard/ResponsiveDrawer.jsx'
+import Users from './components/Users/Users'
+import UserDetails from './components/Users/UserDetails'
 import Profile from './Views/Profile'
 import SignInSide from './components/SignIn/SignInSide'
 import MainContent from './components/MainContent/MainContent'
