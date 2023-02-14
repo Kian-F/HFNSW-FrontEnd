@@ -11,7 +11,7 @@ const UserDetails = () => {
 
   const { data, isLoading } = useQuery(['user', { userId }], () => api.getUser(userId))
 
-  const { mutate, mutateAsync, isLoading: isUpdating } = useMutation(api.updateUser)
+  const { mutateAsync, isLoading: isUpdating } = useMutation(api.updateUser)
 
   const onFormSubmit = async (formData) => {
     console.log(formData, userId)
