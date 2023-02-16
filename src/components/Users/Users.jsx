@@ -11,7 +11,7 @@ import DataTable from '../../Functions/dataTable'
 const isMobile = isMobileBrowser()
 
 const Users = ({ setUserId }) => {
-  const { data: users, isLoading, hasData } = useQuery('users', api.getUsers) || []
+  const { data: users, isLoading } = useQuery('users', api.getUsers) || []
 
   const hasMargin = isMobile ? '0px' : '250px'
 
