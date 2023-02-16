@@ -14,7 +14,6 @@ const UserDetails = () => {
   const { mutateAsync, isLoading: isUpdating } = useMutation(api.updateUser)
 
   const onFormSubmit = async (formData) => {
-    console.log(formData, userId)
     await mutateAsync({ ...formData, userId })
   }
 
