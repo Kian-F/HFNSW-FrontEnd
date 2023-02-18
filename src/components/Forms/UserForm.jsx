@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, TextField } from '@mui/material'
 
-import MainContent from '../MainContent/Columns/Main/Mian'
+import MainContent from '../MainContent/Columns/Main/Main'
 
 const useForceUpdate = () => {
   let [value, setState] = useState(true)

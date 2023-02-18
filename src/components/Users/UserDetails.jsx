@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useMutation, useQuery } from 'react-query'
 
 import * as api from '../../ReactQuery/usersApi'
-import MainContent from '../MainContent/Columns/Main/Mian'
+import MainContent from '../MainContent/Columns/Main/Main'
 import UserForm from '../Forms/UserForm'
 
 const UserDetails = () => {
