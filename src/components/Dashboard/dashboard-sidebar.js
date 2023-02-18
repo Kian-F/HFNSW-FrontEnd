@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
-// import NextLink from 'next/link'
-// import { useRouter } from 'next/router'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material'
 // import OpenInNewIcon from '@mui/icons-material/OpenInNew'
