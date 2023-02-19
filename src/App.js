@@ -33,9 +33,9 @@ const App = () => {
         <MainContent>
           <Switch>
             {/* <Route exact path="/" component={Home} /> */}
-            <Route exact path="/signInSide" component={SignInSide} />
-            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/" component={SignInSide} />
             <Route exact path="/account" component={Account} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/users" component={Users} />
             <Route exact path="/users/:id/userDetails" component={UserDetails} />
           </Switch>

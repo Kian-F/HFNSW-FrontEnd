@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide() {
   const classes = useStyles()
   const { loginWithRedirect, logout } = useAuth0()
-
+  console.log(loginWithRedirect)
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />

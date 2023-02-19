@@ -15,7 +15,6 @@ ReactDOM.render(
       <Auth0ProviderWithHistory
         application={process.env.REACT_APP_APPLICATION_NAME}
         audience={process.env.REACT_APP_AUTH0_API_AUDIENCE}
-        // cacheLocation="localstorage"
         clientId={process.env.REACT_APP_AUTH0_CLIENT_ID || ''}
         domain={process.env.REACT_APP_AUTH0_DOMAIN || ''}
         redirectUri={window.location.origin}

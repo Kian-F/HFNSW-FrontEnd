@@ -1,11 +1,10 @@
 import axios from 'axios'
 
+// const backEndUrl = 'https://hfnsw-backend.vercel.app/'
 const baseURL = 'http://localhost:3000'
 const api = axios.create({ baseURL })
 
 export const generateUrl = (id) => {
-  // if (!id) return
-
   return {
     userEditUrl: `/Users/${id}/userDetails`,
     usersUrl: '/Users'

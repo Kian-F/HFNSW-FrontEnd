@@ -19,8 +19,8 @@ import {
 import GroupIcon from '@mui/icons-material/Group'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
-import RememberMeIcon from '@mui/icons-material/RememberMe'
 import MenuIcon from '@mui/icons-material/Menu'
+import RememberMeIcon from '@mui/icons-material/RememberMe'
 
 import * as api from '../../ReactQuery/usersApi'
 import LogoutButton from '../LogoutButton/LogoutButton'
