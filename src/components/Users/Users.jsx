@@ -5,7 +5,7 @@ import isMobileBrowser from 'is-mobile'
 import { Box } from '@mui/material'
 
 import * as api from '../../ReactQuery/usersApi'
-import LinearColor from '../../Functions/LinearColor'
+import LinearColor from '../../Functions/linearColor'
 import DataTable from '../../Functions/dataTable'
 
 const isMobile = isMobileBrowser()
