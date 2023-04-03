@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// const backEndUrl = 'https://hfnsw-backend.vercel.app/'
+// const baseURL = 'https://hfnsw-backend.vercel.app'
 const baseURL = 'http://localhost:3000'
 const api = axios.create({ baseURL })
 

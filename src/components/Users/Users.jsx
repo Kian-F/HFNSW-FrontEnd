@@ -16,18 +16,33 @@ const Users = ({ setUserId }) => {
   const hasMargin = isMobile ? '0px' : '250px'
 
   return (
-    <Box
-      alignItems="center"
-      sx={{
-        height: '500px',
-        width: 'auto',
-        ml: hasMargin
-      }}
-    >
-      <Box>{isLoading && <LinearColor width="auto" />}</Box>
+    <>
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '50%',
+          marginLeft: 'auto'
+        }}
+      >
+        <LinearColor width="auto" />
+        <LinearColor width="auto" marginTop="20px" />
+      </Box>
 
-      {!isLoading && <DataTable users={users} setUserId={setUserId} />}
-    </Box>
+      {/* <Box
+        alignItems="center"
+        sx={{
+          height: '500px',
+          width: 'auto',
+          ml: hasMargin
+        }}
+      >
+        {!isLoading && <DataTable users={users} setUserId={setUserId} />}
+      </Box> */}
+    </>
   )
 }
 
