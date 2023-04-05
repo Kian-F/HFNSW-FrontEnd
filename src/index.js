@@ -9,6 +9,8 @@ import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory'
 
 const queryClient = new QueryClient()
 
+const uri = 'http://localhost:3001'
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -17,7 +19,7 @@ ReactDOM.render(
         audience={process.env.REACT_APP_AUTH0_API_AUDIENCE}
         clientId={process.env.REACT_APP_AUTH0_CLIENT_ID || ''}
         domain={process.env.REACT_APP_AUTH0_DOMAIN || ''}
-        redirectUri={window.location.origin}
+        redirectUri={uri}
       >
         <QueryClientProvider client={queryClient}>
           <App />

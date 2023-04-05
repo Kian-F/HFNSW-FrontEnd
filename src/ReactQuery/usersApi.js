@@ -1,7 +1,10 @@
 import axios from 'axios'
 
-// const baseURL = 'https://hfnsw-backend.vercel.app'
-const baseURL = 'http://localhost:3000'
+const productionUrl = 'https://hfnsw-backend.onrender.com'
+const developmentUrl = 'http://localhost:3000'
+
+const baseURL = process.env.NODE_ENV === 'development' ? developmentUrl : productionUrl
+
 const api = axios.create({ baseURL })
 
 export const generateUrl = (id) => {

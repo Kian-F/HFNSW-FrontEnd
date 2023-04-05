@@ -17,22 +17,24 @@ const Users = ({ setUserId }) => {
 
   return (
     <>
-      <Box
-        sx={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '50%',
-          marginLeft: 'auto'
-        }}
-      >
-        <LinearColor width="auto" />
-        <LinearColor width="auto" marginTop="20px" />
-      </Box>
+      {isLoading && (
+        <Box
+          sx={{
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '50%',
+            marginLeft: 'auto'
+          }}
+        >
+          <LinearColor width="auto" />
+          <LinearColor width="auto" />
+        </Box>
+      )}
 
-      {/* <Box
+      <Box
         alignItems="center"
         sx={{
           height: '500px',
@@ -41,7 +43,7 @@ const Users = ({ setUserId }) => {
         }}
       >
         {!isLoading && <DataTable users={users} setUserId={setUserId} />}
-      </Box> */}
+      </Box>
     </>
   )
 }

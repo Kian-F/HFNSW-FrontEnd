@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = (props) => {
   const { loggedInStatus } = props
-  console.log(props)
+
   const classes = useStyles()
 
   return (
