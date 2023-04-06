@@ -9,7 +9,10 @@ import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory'
 
 const queryClient = new QueryClient()
 
-const uri = 'https://localhost:3001'
+const productionUrl = 'https://hfnsw-front-end.vercel.app/'
+const redirectUri = 'http://localhost:3001'
+
+const baseURL = process.env.NODE_ENV === 'development' ? redirectUri : productionUrl
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +22,7 @@ ReactDOM.render(
         audience={process.env.REACT_APP_AUTH0_API_AUDIENCE}
         clientId={process.env.REACT_APP_AUTH0_CLIENT_ID || ''}
         domain={process.env.REACT_APP_AUTH0_DOMAIN || ''}
-        redirectUri={uri}
+        redirectUri={baseURL}
       >
         <QueryClientProvider client={queryClient}>
           <App />

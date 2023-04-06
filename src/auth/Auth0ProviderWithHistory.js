@@ -14,7 +14,10 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   const history = useHistory()
 
-  const uri = 'https://localhost:3001'
+  const productionUrl = 'https://hfnsw-front-end.vercel.app/'
+  const redirectUri = 'http://localhost:3001'
+
+  const baseURL = process.env.NODE_ENV === 'development' ? redirectUri : productionUrl
 
   const onRedirectCallback = (appState) => {
     history.push(url)
@@ -25,7 +28,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       audience={audience}
       domain={domain}
       clientId={clientId}
-      redirectUri={uri}
+      redirectUri={baseURL}
       onRedirectCallback={onRedirectCallback}
     >
       {children}
