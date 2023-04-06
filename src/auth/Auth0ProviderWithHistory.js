@@ -14,6 +14,8 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   const history = useHistory()
 
+  const uri = 'https://localhost:3001'
+
   const onRedirectCallback = (appState) => {
     history.push(url)
   }
@@ -23,7 +25,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       audience={audience}
       domain={domain}
       clientId={clientId}
-      redirectUri={window.location.origin}
+      redirectUri={uri}
       onRedirectCallback={onRedirectCallback}
     >
       {children}

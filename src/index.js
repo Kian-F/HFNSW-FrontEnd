@@ -9,7 +9,7 @@ import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory'
 
 const queryClient = new QueryClient()
 
-const uri = 'http://localhost:3001'
+const uri = 'https://localhost:3001'
 
 ReactDOM.render(
   <React.StrictMode>
