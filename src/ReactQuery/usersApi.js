@@ -4,7 +4,7 @@ const productionUrl = 'https://hfnsw-backend.onrender.com'
 const developmentUrl = 'http://localhost:3000'
 
 const baseURL = process.env.NODE_ENV === 'development' ? developmentUrl : productionUrl
-
+console.log(baseURL)
 const api = axios.create({ baseURL })
 
 export const generateUrl = (id) => {
