@@ -18,20 +18,21 @@ const Users = ({ setUserId }) => {
   return (
     <>
       {isLoading && (
-        <Box
-          sx={{
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '50%',
-            marginLeft: 'auto'
-          }}
-        >
-          <LinearColor width="auto" />
-          <LinearColor width="auto" />
-        </Box>
+        <>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: 'auto',
+              marginLeft: '251px'
+            }}
+          >
+            <LinearColor />
+            <LinearColor />
+          </Box>
+        </>
       )}
 
       <Box

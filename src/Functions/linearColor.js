@@ -1,6 +1,5 @@
 import * as React from 'react'
-import Stack from '@mui/material/Stack'
-import LinearProgress from '@mui/material/LinearProgress'
+import { Box, LinearProgress, Stack } from '@mui/material'
 
 export default function LinearColor() {
   const [progress, setProgress] = React.useState(0)
@@ -16,10 +15,16 @@ export default function LinearColor() {
   }, [])
 
   return (
-    <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2}>
-      <LinearProgress color="success" variant="buffer" value={progress} valueBuffer={progress + 10} />
-      <LinearProgress color="success" variant="buffer" value={progress} valueBuffer={progress + 10} />
-      <LinearProgress color="success" variant="buffer" value={progress} valueBuffer={progress + 10} />
-    </Stack>
+    <Box sx={{ width: '99%', color: 'grey.500', height: '100px' }}>
+      <Stack
+        sx={{ width: '99%', color: 'grey.500', marginTop: '10px', border: 'solid gray 1px', borderRadius: '5px' }}
+        spacing={3}
+      >
+        <LinearProgress value={progress} valueBuffer={progress} />
+        <LinearProgress value={progress} valueBuffer={progress} />
+        <LinearProgress value={progress} valueBuffer={progress} />
+        <LinearProgress value={progress} valueBuffer={progress} />
+      </Stack>
+    </Box>
   )
 }

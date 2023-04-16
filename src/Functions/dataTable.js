@@ -25,6 +25,7 @@ const columns = [
     width: 160,
     valueGetter: (params) => `${params.row.first_name || ''} ${params.row.last_name || ''}`
   },
+  { field: 'mobile', headerName: 'Mobile', width: 130 },
   {
     renderCell: (cellValues) => {
       return (

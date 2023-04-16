@@ -33,7 +33,7 @@ const UserForm = ({ user, onFormSubmit }) => {
     onFormSubmit(values)
   }
 
-  const handleForceupdateMethod = useForceUpdate()
+  const handleForceUpdateMethod = useForceUpdate()
 
   return (
     <MainContent>
@@ -122,7 +122,7 @@ const UserForm = ({ user, onFormSubmit }) => {
               p: 2
             }}
           >
-            <Button type="submit" onClick={(onFormSubmit, handleForceupdateMethod)} color="primary" variant="contained">
+            <Button type="submit" onClick={(onFormSubmit, handleForceUpdateMethod)} color="primary" variant="contained">
               Save details
             </Button>
           </Box>

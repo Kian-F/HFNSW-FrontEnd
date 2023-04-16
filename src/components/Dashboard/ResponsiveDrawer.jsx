@@ -40,7 +40,7 @@ const ResponsiveDrawer = (props) => {
 
   const drawer = (
     <div>
-      <Toolbar />
+      {/* <Toolbar /> */}
       <DashboardNavbar />
       <Divider />
       <List>

@@ -19,7 +19,7 @@ const UserDetails = () => {
 
   return (
     <MainContent>
-      <UserForm key={userId} user={data} onFormSubmit={onFormSubmit}></UserForm>
+      {!isLoading && <UserForm key={userId} user={data} onFormSubmit={onFormSubmit}></UserForm>}
     </MainContent>
   )
 }

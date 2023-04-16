@@ -21,8 +21,9 @@ const Account = () => {
 
     const getUser = async () => {
       const accessToken = await getAccessTokenSilently()
+
       const { data, error } = await getAdminResource(accessToken)
-      console.log(data)
+
       if (!isMounted) {
         return
       }

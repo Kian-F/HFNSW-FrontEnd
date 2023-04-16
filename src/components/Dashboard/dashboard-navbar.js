@@ -18,11 +18,11 @@ export const DashboardNavbar = (props) => {
       <DashboardNavbarRoot
         sx={{
           left: {
-            lg: 280
+            lg: 240
           },
           right: { lg: 300 },
           width: {
-            lg: 'calc(100% - 280px)'
+            lg: 'calc(100% - 240px)'
           }
         }}
         {...other}
