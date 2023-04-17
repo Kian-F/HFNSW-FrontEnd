@@ -15,15 +15,16 @@ export default function LinearColor() {
   }, [])
 
   return (
-    <Box sx={{ width: '99%', color: 'grey.500', height: '100px' }}>
+    <Box sx={{ width: '75%', height: '155px', border: 'solid rgba(224, 224, 224, 1) 1px', borderRadius: '5px' }}>
       <Stack
-        sx={{ width: '99%', color: 'grey.500', marginTop: '10px', border: 'solid gray 1px', borderRadius: '5px' }}
+        sx={{ width: '90%', color: 'grey.500', marginTop: '20px', marginBottom: '20px', marginLeft: '45px' }}
         spacing={3}
       >
-        <LinearProgress value={progress} valueBuffer={progress} />
-        <LinearProgress value={progress} valueBuffer={progress} />
-        <LinearProgress value={progress} valueBuffer={progress} />
-        <LinearProgress value={progress} valueBuffer={progress} />
+        <LinearProgress color="inherit" />
+        <LinearProgress color="inherit" />
+        <LinearProgress color="inherit" />
+        <LinearProgress color="inherit" />
+        <LinearProgress color="inherit" />
       </Stack>
     </Box>
   )

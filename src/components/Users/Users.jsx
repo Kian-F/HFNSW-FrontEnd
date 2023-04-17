@@ -30,7 +30,6 @@ const Users = ({ setUserId }) => {
             }}
           >
             <LinearColor />
-            <LinearColor />
           </Box>
         </>
       )}

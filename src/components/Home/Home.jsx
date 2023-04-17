@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Button, CssBaseline, Container, Grid, Link } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Box, Button, CssBaseline, Container, Grid } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({

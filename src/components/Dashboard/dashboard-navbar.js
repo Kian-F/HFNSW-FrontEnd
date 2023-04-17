@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material'
@@ -62,16 +63,18 @@ export const DashboardNavbar = (props) => {
               </Badge>
             </IconButton>
           </Tooltip>
-          <Avatar
-            sx={{
-              height: 40,
-              width: 40,
-              ml: 1
-            }}
-            src="/static/images/avatars/avatar_1.png"
-          >
-            <UserCircleIcon fontSize="small" />
-          </Avatar>
+          <Link to="/Account">
+            <Avatar
+              sx={{
+                height: 40,
+                width: 40,
+                ml: 1
+              }}
+              src="/static/images/avatars/avatar_1.png"
+            >
+              <UserCircleIcon fontSize="small" />
+            </Avatar>
+          </Link>
         </Toolbar>
       </DashboardNavbarRoot>
     </>
