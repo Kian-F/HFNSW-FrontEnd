@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
 
 import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, TextField } from '@mui/material'
 
@@ -7,6 +8,23 @@ import MainContent from '../MainContent/Columns/Main/Main'
 const useForceUpdate = () => {
   let [value, setState] = useState(true)
   return () => setState(!value)
+}
+
+const confirmUpdateUser = (onFormSubmit, handleForceUpdateMethod) => {
+  Swal.fire({
+    toast: true,
+    icon: 'success',
+    title: 'User Updated successfully',
+    animation: false,
+    position: 'bottom',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 }
 
 const UserForm = ({ user, onFormSubmit }) => {
@@ -122,8 +140,8 @@ const UserForm = ({ user, onFormSubmit }) => {
               p: 2
             }}
           >
-            <Button type="submit" onClick={(onFormSubmit, handleForceUpdateMethod)} color="primary" variant="contained">
-              Save details
+            <Button type="submit" onClick={confirmUpdateUser} color="primary" variant="contained">
+              Save Details
             </Button>
           </Box>
         </Card>

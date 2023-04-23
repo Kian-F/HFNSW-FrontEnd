@@ -21,6 +21,9 @@ export const getUser = (userId) => api.get(`/users/${userId}`).then((res) => res
 export const updateUser = ({ userId, ...updatedUser }) =>
   api.put(`/users/${userId}`, updatedUser).then((res) => res.data)
 
+export const deleteUser = ({ userId, ...deleteUser }) =>
+  api.delete(`/users/${userId}`, deleteUser).then((res) => res.data)
+
 // export const updateUser = async ({ userId, ...updatedUser }) => {
 //   console.log('userId: ', userId)
 //   console.log({ ...updatedUser })
