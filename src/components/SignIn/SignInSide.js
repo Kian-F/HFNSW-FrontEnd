@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles()
-  const { loginWithRedirect, logout } = useAuth0()
+  const { loginWithRedirect, logout, auth0Logout } = useAuth0()
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -93,7 +93,7 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={() => logout()}
+              onClick={() => logout({ returnTo: window.location.origin })}
             >
               logout
               {/* <AuthenticationButton /> */}

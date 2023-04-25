@@ -6,6 +6,8 @@ import { Bell as BellIcon } from '../../icons/bell'
 import { UserCircle as UserCircleIcon } from '../../icons/user-circle'
 import { Users as UsersIcon } from '../../icons/users'
 
+import AuthenticationButton from '../../auth/AuthenticationButton'
+
 const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
   backgroundColor: 'primary',
   boxShadow: theme.shadows[1]
@@ -75,6 +77,7 @@ export const DashboardNavbar = (props) => {
               <UserCircleIcon fontSize="small" />
             </Avatar>
           </Link>
+          <AuthenticationButton />
         </Toolbar>
       </DashboardNavbarRoot>
     </>

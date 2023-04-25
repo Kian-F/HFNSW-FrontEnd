@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
 import { DataGrid } from '@mui/x-data-grid'
-import { Button } from '@mui/material'
+import { Button, Stack } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 import * as api from '../ReactQuery/usersApi'
 
@@ -30,17 +31,23 @@ const columns = [
   {
     renderCell: (cellValues) => {
       return (
-        <Button
-          variant="outlined"
-          startIcon={<EditIcon />}
-          color="primary"
-          onClick={(event) => {
-            event.stopPropagation()
-          }}
-          href={handleClick(cellValues)}
-        >
-          Edit
-        </Button>
+        <Stack direction="row" spacing={2}>
+          <Button
+            variant="outlined"
+            startIcon={<EditIcon />}
+            color="primary"
+            onClick={(event) => {
+              event.stopPropagation()
+            }}
+            href={handleClick(cellValues)}
+          >
+            Edit
+          </Button>
+
+          <Button variant="outlined" color="error" size="small" startIcon={<DeleteIcon />}>
+            Delete
+          </Button>
+        </Stack>
       )
     }
   }

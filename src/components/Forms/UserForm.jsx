@@ -27,6 +27,10 @@ const confirmUpdateUser = (onFormSubmit, handleForceUpdateMethod) => {
   })
 }
 
+// const confirmDeleteUser = (deleteFn, ) => {
+
+// }
+
 const UserForm = ({ user, onFormSubmit }) => {
   const { email, first_name, last_name, mobile } = user || {}
 
