@@ -14,15 +14,20 @@ export const generateUrl = (id) => {
   }
 }
 
-export const getUsers = () => api.get('/users').then((res) => res.data)
+export const getUsers = async () => {
+  const response = await api.get('/users')
+  return response.data
+}
 
 export const getUser = (userId) => api.get(`/users/${userId}`).then((res) => res.data)
 
 export const updateUser = ({ userId, ...updatedUser }) =>
   api.put(`/users/${userId}`, updatedUser).then((res) => res.data)
 
-export const deleteUser = ({ userId, ...deleteUser }) =>
-  api.delete(`/users/${userId}`, deleteUser).then((res) => res.data)
+export const deleteUser = async ({ id }) => {
+  console.log('id ', id)
+  return await api.delete(`/users/${id}`)
+}
 
 // export const updateUser = async ({ userId, ...updatedUser }) => {
 //   console.log('userId: ', userId)

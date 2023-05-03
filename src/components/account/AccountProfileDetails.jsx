@@ -1,5 +1,8 @@
 import { useState } from 'react'
+
 import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, TextField } from '@mui/material'
+
+import Swal from 'sweetalert2'
 
 import { withAuthenticationRequired } from '@auth0/auth0-react'
 
@@ -17,6 +20,23 @@ const states = [
     label: 'San Francisco'
   }
 ]
+
+const confirmUpdateUser = (onFormSubmit, handleForceUpdateMethod) => {
+  Swal.fire({
+    toast: true,
+    icon: 'success',
+    title: 'User Updated successfully',
+    animation: false,
+    position: 'bottom',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+}
 
 export const AccountProfileDetails = (props) => {
   const { user } = props
@@ -130,7 +150,7 @@ export const AccountProfileDetails = (props) => {
             p: 2
           }}
         >
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" onClick={confirmUpdateUser}>
             Save details
           </Button>
         </Box>
